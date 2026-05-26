@@ -18,7 +18,7 @@
 
 double Setpoint, Input, Output;
 double Kp = 0.21, Ki = 0.0, Kd = 0.96;
-float f = 5, g = 3, u_bar = 1; //Starting conditions; feedback linearization library takes care of all them online with the exception of g
+float f = 5, g = 3, u_bar = 1; //Starting conditions; feedback linearization library takes care of all them online with the exception of g, which is static
 
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT); //Negative feedback loop
 Madgwick filter; //Filter for IMU data; better performance than a standard Kalman filter for space applications
