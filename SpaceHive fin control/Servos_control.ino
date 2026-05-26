@@ -18,7 +18,7 @@
 
 double Setpoint, Input, Output;
 double Kp = 0.21, Ki = 0.0, Kd = 0.96;
-float f = 5, g = 3, u_bar = 1; //Starting conditions; feedback linearization library takes care of all them online with the exception of g, which is static
+float f = 0, g = 0, u_bar = 0; //Starting conditions to be modified; feedback linearization library takes care of all them online with the exception of g, which is static
 
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT); //Negative feedback loop
 Madgwick filter; //Filter for IMU data; better performance than a standard Kalman filter for space applications
@@ -80,5 +80,6 @@ void loop()
 
 }
 
-//To be modified and improved implementing other strategies from Control theory, such as optimal control and anti-windup scheme. All simulations have been
+//To be modified and improved implementing other strategies from Control theory, such as optimal control and anti-windup scheme. As regards the starting conditions for the feedback linearization function, an online computation program should be added.
+//All simulations have been
 //carried out using MATLAB and Simulink.
