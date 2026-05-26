@@ -15,7 +15,7 @@
 //System specs, PID parameters, servos
 
 #define INPUT_PIN 0
-
+float Ix, b, C_alpha, K_ail, delta_max;       
 double Setpoint, Input, Output;
 double Kp = 0.21, Ki = 0.0, Kd = 0.96;
 float f = 0, g = 0, u_bar = 0; //Starting conditions to be modified; feedback linearization library takes care of all them online with the exception of g, which is static
